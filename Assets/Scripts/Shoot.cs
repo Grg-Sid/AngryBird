@@ -3,7 +3,8 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public float power = 5f;
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
+    LineRenderer lr;
 
     public Vector2 minPower;
     public Vector2 maxPower;
@@ -15,6 +16,8 @@ public class Shoot : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        lr = GetComponent<LineRenderer>();
         cam = Camera.main;
     }
 
@@ -24,7 +27,7 @@ public class Shoot : MonoBehaviour
         {
             startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
             startPoint.z = 15;
-            Debug.Log(startPoint);
+            //Debug.Log(startPoint);
         }
         if(Input.GetMouseButtonUp(0)) 
         { 
