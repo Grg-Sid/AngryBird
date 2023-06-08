@@ -135,9 +135,10 @@ GameObject:
   - component: {fileID: 321489020}
   - component: {fileID: 321489019}
   - component: {fileID: 321489018}
+  - component: {fileID: 321489022}
   m_Layer: 0
   m_Name: MediumWoodBlock (1)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,6 +255,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &321489022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321489017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d73ac4ef3ebc2419df92646b47882a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birds: {fileID: 1689008867}
-  offset: 5
+  offsetX: 5
+  offsetY: 2.1
   offsetSmoothing: 2
 --- !u!20 &519420031
 Camera:
@@ -574,6 +589,45 @@ Transform:
   m_Father: {fileID: 1318580267}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &941959223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733179867430024607, guid: 4927a0d2afa138a4fb1ecef237b7276b, type: 3}
+  m_PrefabInstance: {fileID: 1124100436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &941959224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941959223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d73ac4ef3ebc2419df92646b47882a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
+--- !u!50 &941959226
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941959223}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1005387203
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1733179867430024607, guid: 4927a0d2afa138a4fb1ecef237b7276b, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     - target: {fileID: 2815897367161353203, guid: 4927a0d2afa138a4fb1ecef237b7276b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -746,6 +804,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1350433219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733179867430024607, guid: 4927a0d2afa138a4fb1ecef237b7276b, type: 3}
+  m_PrefabInstance: {fileID: 556082467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1350433220
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350433219}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &1350433221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350433219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d73ac4ef3ebc2419df92646b47882a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
 --- !u!1 &1593318112
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +939,7 @@ GameObject:
   - component: {fileID: 1689008871}
   - component: {fileID: 1689008872}
   - component: {fileID: 1689008873}
+  - component: {fileID: 1689008874}
   m_Layer: 0
   m_Name: BlueBird_0
   m_TagString: Untagged
@@ -1074,6 +1172,59 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &1689008874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689008867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0c935c48d963a4fba29e139894ed81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoint: 20
+  maxHealth: 20
+--- !u!1 &1740886879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733179867430024607, guid: 4927a0d2afa138a4fb1ecef237b7276b, type: 3}
+  m_PrefabInstance: {fileID: 1733179868515257753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1740886880
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740886879}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &1740886881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740886879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d73ac4ef3ebc2419df92646b47882a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
 --- !u!1 &2042618679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,9 +1237,10 @@ GameObject:
   - component: {fileID: 2042618682}
   - component: {fileID: 2042618681}
   - component: {fileID: 2042618680}
+  - component: {fileID: 2042618684}
   m_Layer: 0
   m_Name: MediumWoodBlock
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1205,6 +1357,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2042618684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042618679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d73ac4ef3ebc2419df92646b47882a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
 --- !u!1001 &1733179868515257753
 PrefabInstance:
   m_ObjectHideFlags: 0
