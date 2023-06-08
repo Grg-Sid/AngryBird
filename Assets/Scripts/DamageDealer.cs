@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
@@ -10,11 +8,11 @@ public class DamageDealer : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject otherObject = collision.gameObject;
-        BlueHealthManager blueHealthManager = otherObject.GetComponent<BlueHealthManager>();
+        HealthManager healthManager = otherObject.GetComponent<HealthManager>();
 
-        if(blueHealthManager != null)
+        if(healthManager != null)
         {
-            blueHealthManager.TakeDamage(damageAmount);
+            healthManager.TakeDamage(damageAmount);
         }
     }
 }

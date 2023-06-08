@@ -10,8 +10,6 @@ public class Shoot : MonoBehaviour
     public Vector2 maxPower;
 
     private Camera cam;
-    private Vector3 initialPosition;
-    private bool isBeingDragged;
     private bool isNotShot = true;
     private float dragDistanceThreshold = 0.1f;
 
@@ -24,7 +22,6 @@ public class Shoot : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //lr = GetComponent<LineRenderer>();
         cam = Camera.main;
-        initialPosition = transform.position;
     }
     private void Update()
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueHealthManager : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
     public float healthPoint;
     public float maxHealth;
