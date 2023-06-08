@@ -2,17 +2,24 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    public float damageAmount = 1f;
-    //public string targetTag;
+    public float hitPoint = 10f;
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject otherObject = collision.gameObject;
-        HealthManager healthManager = otherObject.GetComponent<HealthManager>();
-
-        if(healthManager != null)
+        if (collision.relativeVelocity.magnitude > 4)
         {
-            healthManager.TakeDamage(damageAmount);
+            hitPoint -= collision.relativeVelocity.magnitude;
+            Debug.Log(collision.relativeVelocity.magnitude);
+        }    
+
+    }
+
+    private void Update()
+    {
+        if (hitPoint <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Destroyed");
         }
     }
 }
