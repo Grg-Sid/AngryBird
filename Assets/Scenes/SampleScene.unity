@@ -1473,7 +1473,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1408415182}
+  pivot: {fileID: 349468146}
   releaseTime: 0.15
+  dragDistance: 2
 --- !u!231 &1408415185
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -2022,7 +2024,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1689008870}
+  pivot: {fileID: 349468146}
   releaseTime: 0.15
+  dragDistance: 3
 --- !u!1 &1740886879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1733179867430024607, guid: 4927a0d2afa138a4fb1ecef237b7276b, type: 3}
