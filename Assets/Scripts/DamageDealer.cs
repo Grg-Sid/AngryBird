@@ -6,19 +6,18 @@ public class DamageDealer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.relativeVelocity.magnitude > 4)
+        if (collision.relativeVelocity.magnitude > 6)
         {
             hitPoint -= collision.relativeVelocity.magnitude;
-            //Debug.Log(collision.relativeVelocity.magnitude);
         }    
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(gameObject.tag == "Bird")
         {
-            hitPoint -= 0.05f;
+            hitPoint -= 0.1f;
         }
         if (hitPoint <= 0)
         {

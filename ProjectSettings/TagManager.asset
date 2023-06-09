@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wood
   - Bird
+  - Enemy
   layers:
   - Default
   - TransparentFX

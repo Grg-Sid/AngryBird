@@ -24,19 +24,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //if (!isSpecialAbilityActivated && isDragging)
-        //{
-        //    Vector2 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        //    if (Vector3.Distance(currentPosition, pivot.position) > dragDistance)
-        //    {
-        //        rb.position = pivot.position + (currentPosition - pivot.position).normalized * dragDistance;
-        //    }
-        //    else
-        //    {
-        //        rb.position = currentPosition;
-        //    }
-        //}
         if (!isSpecialAbilityActivated && isDragging)
         {
             Vector2 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
