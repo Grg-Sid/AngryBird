@@ -21,18 +21,15 @@ public class EnemyHealthManager : MonoBehaviour
                 Death();
                 enemyCount--;
                 Debug.Log(enemyCount);
+                if (enemyCount <= 0)
+                {
+                    Debug.Log("GAME WON!!");
+                }
             }
         }
     }
     public void Death()
     {
-        
         Destroy(gameObject);
-        
-
-        if(enemyCount == 0)
-        {
-            Debug.Log("GAME WON!!");
-        }
     }
 }

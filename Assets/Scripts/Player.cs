@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,7 +13,6 @@ public class Player : MonoBehaviour
 
     private bool isDragging = false;
     private bool isSpecialAbilityActivated = false;
-    private Vector2 initialClickPosition;
 
 
     private void Awake()

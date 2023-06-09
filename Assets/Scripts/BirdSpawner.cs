@@ -5,31 +5,36 @@ public class BirdSpawner : MonoBehaviour
     public GameObject birdPrefab;
     public Transform spawnPoint;
     public Rigidbody2D spawnRigidbody;
-    public int spawnCount = 0;
+    public int spawnCount = 5;
 
     private GameObject currentBird;
+    private bool gameEnd = false;
 
     private void Start()
     {
         SpawnBird();
+        //spawnCount--;
         
     }
 
     private void Update()
     {
-        if (currentBird == null && spawnCount < 5)
+        if (currentBird == null && spawnCount > 0)
         {
+            spawnCount--;
             SpawnBird();
         }
-        else if(spawnCount >= 5)
+
+        if(spawnCount == 0 && !gameEnd) 
         {
             Debug.Log("Game Over");
+            gameEnd = true;
         }
     }
 
     public void SpawnBird()
     {
-        spawnCount++;
+        //spawnCount++;
         currentBird = Instantiate(birdPrefab, spawnPoint.position, Quaternion.identity);
         SpringJoint2D springJoint = currentBird.GetComponent<SpringJoint2D>();
         Rigidbody2D connectedBody = new GameObject("ConnectedBody").AddComponent<Rigidbody2D>();

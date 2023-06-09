@@ -17,12 +17,12 @@ public class DamageDealer : MonoBehaviour
     {
         if(gameObject.tag == "Bird")
         {
-            hitPoint -= 0.1f;
+            hitPoint -= 0.2f;
         }
         if (hitPoint <= 0)
         {
             Destroy(gameObject);
-            Debug.Log("Destroyed");
+            //Debug.Log("Destroyed");
         }
     }
 }
