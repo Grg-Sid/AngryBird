@@ -1,34 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject birds;
     public float offsetX;
     public float offsetY;
     public float offsetSmoothing;
-    private Vector3 birdPosition;
+    public float minY = 5f;
+    public float maxY = 5f;
 
+    private Transform target;
 
-    
-    void Start()
+    public void SetTarget(Transform newTarget)
     {
-        
+        target = newTarget;
     }
-    void Update()
+
+    private void LateUpdate()
+{
+    if (target != null)
     {
-        birdPosition = new Vector3(birds.transform.position.x, birds.transform.position.y, transform.position.z);
-        
-        if(birds.transform.localScale.x > 0f)
+        Vector3 targetPosition = target.position;
+        targetPosition.z = transform.position.z;
+
+        if (target.localScale.x > 0f)
         {
-            birdPosition = new Vector3(birdPosition.x + offsetX, birdPosition.y + offsetY, birdPosition.z);    
+            targetPosition.x += offsetX;
         }
         else
         {
-            birdPosition = new Vector3(birdPosition.x - offsetX, birdPosition.y + offsetY, birdPosition.z);
+            targetPosition.x -= offsetX;
         }
 
-        transform.position = Vector3.Lerp(transform.position, birdPosition, offsetSmoothing * Time.deltaTime);
+        targetPosition.y += offsetY;
+        targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
+
+        transform.position = Vector3.Lerp(transform.position, targetPosition, offsetSmoothing * Time.deltaTime);
     }
+}
+
 }
