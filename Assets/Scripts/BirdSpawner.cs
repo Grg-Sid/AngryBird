@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdSpawner : MonoBehaviour
 {
     public GameObject birdPrefab;
     public Transform spawnPoint;
     public Rigidbody2D spawnRigidbody;
+   
     public int spawnCount = 5;
+    public int targetIndex;
 
     private GameObject currentBird;
     private bool gameEnd = false;
@@ -13,35 +16,38 @@ public class BirdSpawner : MonoBehaviour
     private void Start()
     {
         SpawnBird();
-        //spawnCount--;
-        
     }
 
     private void Update()
     {
-        if (currentBird == null && spawnCount > 0)
+        if (spawnCount <= 0 && !gameEnd)
+        {
+            GameOver();
+            return;
+        }
+
+        if (currentBird == null && spawnCount > 0 && !gameEnd)
         {
             spawnCount--;
             SpawnBird();
         }
-
-        if(spawnCount == 0 && !gameEnd) 
-        {
-            Debug.Log("Game Over");
-            gameEnd = true;
-        }
     }
-
+    private void GameOver()
+    {
+        Debug.Log("game over "+spawnCount);
+        gameEnd = true;
+        SceneManager.LoadScene(targetIndex);
+    }
     public void SpawnBird()
     {
-        //spawnCount++;
+        Debug.Log(spawnCount);
         currentBird = Instantiate(birdPrefab, spawnPoint.position, Quaternion.identity);
         SpringJoint2D springJoint = currentBird.GetComponent<SpringJoint2D>();
         Rigidbody2D connectedBody = new GameObject("ConnectedBody").AddComponent<Rigidbody2D>();
         connectedBody = spawnRigidbody;
         springJoint.connectedBody = connectedBody;
 
-        // Set the spawned bird as the target for the camera to follow
+
         CameraController cameraController = FindObjectOfType<CameraController>();
         if (cameraController != null)
         {

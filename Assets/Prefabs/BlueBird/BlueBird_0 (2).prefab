@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4752043671267419772}
   - component: {fileID: 5702837697566836181}
   - component: {fileID: 1423046551238853377}
-  - component: {fileID: 6746351077461022010}
+  - component: {fileID: 5961519199387629052}
   m_Layer: 0
   m_Name: BlueBird_0 (2)
   m_TagString: Bird
@@ -259,7 +259,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &6746351077461022010
+--- !u!114 &5961519199387629052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

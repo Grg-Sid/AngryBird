@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealthManager : MonoBehaviour
 {
@@ -13,17 +14,17 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.relativeVelocity.magnitude > 2f) 
+        if (collision.relativeVelocity.magnitude > 2f)
         {
             health -= collision.relativeVelocity.magnitude;
-            if(health <= 0)
-            { 
+            if (health <= 0)
+            {
                 Death();
                 enemyCount--;
-                Debug.Log(enemyCount);
+                Debug.Log("enemies " + enemyCount);
                 if (enemyCount <= 0)
                 {
-                    Debug.Log("GAME WON!!");
+                    SceneManager.LoadScene(3);
                 }
             }
         }

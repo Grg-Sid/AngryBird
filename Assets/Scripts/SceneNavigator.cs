@@ -3,28 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class SceneNavigator : MonoBehaviour
 {
-    int sceneIndex, currentIndex;
+    //public int sceneIndex; 
 
-    private void Start()
+    public void SceneLoaderNext(int sceneIndex)
     {
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        currentIndex = sceneIndex;
+        SceneManager.LoadScene(sceneIndex);
     }
-    public void SceneLoaderNext()
+    public void SceneLoaderPrevious(int sceneIndex)
     {
-        SceneManager.LoadScene(sceneIndex + 1);
-        currentIndex = sceneIndex + 1;
-    }
-    public void SceneLoaderPrevious()
-    {
-        SceneManager.LoadScene(sceneIndex - 1);
-        currentIndex = sceneIndex - 1;
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void SceneReset()
     {
-        SceneManager.LoadScene(sceneIndex);
-        currentIndex = sceneIndex;
+        int scneIndex = SceneManager.GetActiveScene().buildIndex; 
+        SceneManager.LoadScene(scneIndex);
     }
     public void QuitApp()
     {
